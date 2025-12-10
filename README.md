@@ -37,7 +37,7 @@ Place both files in the root directory of the project.
 ### Running the Server
 
 ```bash
-dart run main.dart
+dart run server.dart
 ```
 
 The server will start on `http://localhost:8080`
