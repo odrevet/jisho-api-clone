@@ -28,16 +28,24 @@ dart pub get
 
 ### Database Setup
 
+The database config is set in `.env`
+
+* Postgres
+
+Set a running postgres, see [edict_database](https://github.com/odrevet/edict_database?tab=readme-ov-file#postgres-using-docker)
+
+* Sqlite: 
+
 Download the required database files from the [edict_database releases](https://github.com/odrevet/edict_database/releases):
 - `expression.db`
 - `kanji.db`
 
-Place both files in the root directory of the project.
+set path in the `.env`
 
 ### Running the Server
 
 ```bash
-dart run server.dart
+dart run bin/main.dart
 ```
 
 The server will start on `http://localhost:8080`
@@ -51,10 +59,14 @@ http://localhost:8080/api/v1/search/words?keyword=大統領
 
 ## API Compatibility
 
-This project follows the Jisho.org API structure. Clients expecting Jisho's response format should 
+This project follows the Jisho.org API structure. 
 
-work with this server, though many will return empty arrays until fully implemented.
+While clients expecting Jisho's response format should work with this server, here are the key
+differances with jisho.org api:
 
+* Order and search results are differant
+* Some elements like sentences will always be empty.
+* Results attriution only from jmdict. 
 
 ## Links
 
